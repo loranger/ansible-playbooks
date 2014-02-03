@@ -19,4 +19,4 @@
 
 - name: copy php.ini
   template: src=php.ini.j2 dest=/etc/php5/fpm/php.ini
-  notify: restart_php
+  notify: restart php
