@@ -1,0 +1,17 @@
+---
+- name: install nginx packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - nginx
+
+- name: copy nginx default conf
+  template: src=nginx.conf.j2 dest=/etc/nginx/nginx.conf
+  notify: reload nginx
+
+- name: copy nginx default site
+  template: src=default.j2 dest=/etc/nginx/sites-available/default
+  notify: reload nginx
+  
+- name: copy phpinfo
+  template: src=index.php.j2 dest=/usr/share/nginx/html/index.php
+  notify: reload nginx

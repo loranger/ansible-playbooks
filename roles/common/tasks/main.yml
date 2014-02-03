@@ -1,0 +1,20 @@
+---
+- name: register dotdeb
+  apt_key: url=http://www.dotdeb.org/dotdeb.gpg state=present
+
+- name: use french debian mirror
+  template: src=sources.list.j2 dest=/etc/apt/sources.list
+
+- name: upgrade the distro
+  apt: update_cache=yes upgrade=yes cache_valid_time=3600
+
+- name: install common packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - vim
+    - curl
+    - gnupg
+    - rsync
+    - wget
+    - ack-grep
+    - python-pycurl

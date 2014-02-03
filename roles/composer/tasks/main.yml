@@ -1,0 +1,6 @@
+---
+- name: install composer
+  shell:
+    curl -sS https://getcomposer.org/installer | php && /bin/mv -f /home/vagrant/composer.phar /usr/bin/composer
+    creates=/usr/bin/composer
+  notify: restart_php

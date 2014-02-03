@@ -1,0 +1,18 @@
+---
+- name: Common ansible playbook
+  hosts: myserver
+  
+  vars:
+      debian: wheezy
+
+  roles:
+    - common
+    - ntp
+    - git
+    - rmate
+    - php-fpm
+    - composer
+    - nginx
+    - mysql
+    - python
+    - redis

@@ -1,0 +1,8 @@
+---
+- name: install gems package
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - rubygems
+
+- name: install rmate
+  gem: name=rmate state=latest user_install=no
