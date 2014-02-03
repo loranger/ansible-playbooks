@@ -6,5 +6,5 @@
   notify: restart ntp
 
 - name: copy ntp default conf
-  template: src=ntp.conf.j2 dest=/etc/ntp/ntp.conf
+  template: src=ntp.conf.j2 dest=/etc/ntp.conf
   notify: restart ntp
