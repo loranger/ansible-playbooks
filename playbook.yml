@@ -13,7 +13,8 @@
     - ntp
     - git
     - rmate
-    - php-fpm
+    - php-fpm # or hhvm
+    # - hhvm # or php-fpm
     - composer
     - nginx
     - mysql

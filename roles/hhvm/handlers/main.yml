@@ -1,0 +1,3 @@
+---
+- name: restart hhvm
+  action: service name=hhvm-fastcgi state=restarted enabled=yes
