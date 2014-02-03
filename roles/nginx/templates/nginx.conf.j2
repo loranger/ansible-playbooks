@@ -1,5 +1,5 @@
 user www-data;
-worker_processes {{ nginx.workers }};
+worker_processes {{ nginx_workers }};
 pid /var/run/nginx.pid;
 
 events {

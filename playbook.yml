@@ -4,6 +4,9 @@
   
   vars:
       debian: wheezy
+      ntp_server: fr.pool.ntp.org
+      nginx_port: 80
+      nginx_workers: 4
 
   roles:
     - common
