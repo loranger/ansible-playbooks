@@ -1,7 +1,4 @@
 ---
-- name: register dotdeb
-  apt_key: url=http://www.dotdeb.org/dotdeb.gpg state=present
-
 - name: use french debian mirror
   template: src=sources.list.j2 dest=/etc/apt/sources.list
 
