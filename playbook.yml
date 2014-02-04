@@ -7,14 +7,16 @@
       ntp_server: fr.pool.ntp.org
       nginx_port: 80
       nginx_workers: 4
+      php_engine: fpm # (hhvm or fpm)
 
   roles:
     - common
     - ntp
     - git
     - rmate
-    - php-fpm # or hhvm
-    # - hhvm # or php-fpm
+    - { role: php-fpm, when: php_engine == 'fpm' }
+    - { role: php-hhvm, when: php_engine == 'hhvm' }
+    - php-extensions
     - composer
     - nginx
     - mysql

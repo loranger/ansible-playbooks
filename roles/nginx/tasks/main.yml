@@ -9,7 +9,7 @@
   notify: reload nginx
 
 - name: copy nginx default site
-  template: src=default.j2 dest=/etc/nginx/sites-available/default
+  template: src=default.{{ php_engine }}.j2 dest=/etc/nginx/sites-available/default
   notify: reload nginx
   
 - name: copy phpinfo

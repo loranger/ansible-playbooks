@@ -1,14 +1,13 @@
-HHVM
-====
+PHP Extensions
+==============
 
-HipHop Virtual Machine for PHP
+Useful PHP extensions
 
 Supported Tasks
 -----------------
 
-The following tasks are executed :
+The extensions are installed :
 
-  - Install [hhvm](http://www.hhvm.com/) as PHP
   - Install [curl](https://php.net/manual/fr/book.curl.php) php extension
   - Install [dbg](http://docs.php.net/manual/en/migration56.new-features.php#migration56.new-features.phpdbg) php extension
   - Install [intl](http://fr2.php.net/manual/fr/book.intl.php) php extension
@@ -22,4 +21,3 @@ The following tasks are executed :
   - Install [readline](http://fr2.php.net/manual/fr/book.readline.php) php extension
   - Install [redis](http://pecl.php.net/package/redis) php extension
   - Install [xdebug](http://xdebug.org/) php extension
-  - Setup with default php.ini

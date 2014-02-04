@@ -12,10 +12,18 @@
   apt_repository: repo='deb-src http://packages.dotdeb.org {{ debian }}-php55 all' state=present
 
 - name: install php packages
-  apt: pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=latest force=yes
   with_items:
-    - php5-fpm
-
-- name: copy php.ini
-  template: src=php.ini.j2 dest=/etc/php5/fpm/php.ini
-  notify: restart php
+    - php5-curl
+    - php5-dbg
+    - php5-intl
+    - php5-mcrypt
+    - php5-mysqlnd
+    - php5-apcu
+    - php5-geoip
+    - php5-imagick
+    - php5-memcache
+    - php5-mongo
+    - php5-readline
+    - php5-redis
+    - php5-xdebug
