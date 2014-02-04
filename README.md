@@ -12,7 +12,8 @@ This playbook install the following :
   - [Network Time Protocl](roles/ntp)
   - [Git distributed version control](roles/git) system
   - [rmate](roles/rmate) tool
-  - [PHP Fast Process Manager](roles/php-fpm)
+  - [PHP Fast Process Manager](roles/php-fpm) or [HipHop Virtual Machine](roles/php-hhvm)
+  - [PHP useful extensions](roles/php-extensions)
   - [Composer](roles/composer) tool
   - [Nginx](roles/nginx) server
   - [MySQL](roles/mysql) server
