@@ -1,5 +1,5 @@
 ---
-- name: intall hhvm gpg key
+- name: install hhvm gpg key
   apt_key: url=http://dl.hhvm.com/conf/hhvm.gpg.key state=present
 
 - name: add hhvm deb repository
