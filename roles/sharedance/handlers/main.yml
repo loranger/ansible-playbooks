@@ -1,0 +1,9 @@
+---
+- name: start sharedanced
+  service: name=sharedanced start=started
+
+- name: restart sharedanced
+  service: name=sharedanced state=restarted
+
+- name: reload sharedanced
+  service: name=sharedanced state=reloaded
