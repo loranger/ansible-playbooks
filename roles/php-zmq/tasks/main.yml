@@ -1,0 +1,35 @@
+---
+- name: check php-zmq version
+  shell: php -i | grep ZMQ
+  register: current_zmq_extension
+  ignore_errors: True
+
+- name: install required packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - php5-dev
+    - re2c
+    - pkg-config
+
+- name: checkout php-zmq repository
+  git: repo=git://github.com/mkoppanen/php-zmq.git dest=/tmp/php-zmq
+  when: "'enabled' not in '{{ current_zmq_extension.stdout }}'"
+
+- name: build php-zmq
+  action: command {{ item }} chdir=/tmp/php-zmq
+  with_items:
+    - phpize
+    - ./configure
+    - make
+    - make install
+  when: "'enabled' not in '{{ current_zmq_extension.stdout }}'"
+
+- name: copy zmq.ini
+  copy: src=zmq.ini dest=/etc/php5/mods-available/zmq.ini owner=root group=root mode=0644
+  when: "'enabled' not in '{{ current_zmq_extension.stdout }}'"
+
+- name: enable php-zmq
+  action: command {{ item }}
+  with_items:
+    - php5enmod zmq
+  notify: restart php
