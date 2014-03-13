@@ -1,0 +1,24 @@
+---
+- name: register dotdeb key
+  apt_key: url=http://www.dotdeb.org/dotdeb.gpg state=present
+  
+- name: add dotdeb default repositories
+  apt_repository: repo='deb http://packages.dotdeb.org {{ debian }} all' state=present
+
+- name: add dotdeb php55 repositories
+  apt_repository: repo='deb http://packages.dotdeb.org {{ debian }}-php55 all' state=present
+
+- name: add dotdeb php55 sources repositories
+  apt_repository: repo='deb-src http://packages.dotdeb.org {{ debian }}-php55 all' state=present
+
+- name: install php packages
+  apt: pkg={{ item }} state=latest update_cache=yes
+  with_items:
+    - libapache2-mod-php5
+
+- name: copy php.ini
+  template: src=php.ini.j2 dest=/etc/php5/fpm/php.ini
+  notify: restart php
+
+- name: copy cli php.ini
+  template: src=php.cli.ini.j2 dest=/etc/php5/cli/php.ini
