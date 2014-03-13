@@ -1,0 +1,9 @@
+---
+- name: start scout
+  service: name=sharedanced start=started
+
+- name: restart scout
+  service: name=sharedanced state=restarted
+
+- name: stop scout
+  service: name=sharedanced state=reloaded

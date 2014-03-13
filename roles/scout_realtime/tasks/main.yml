@@ -1,0 +1,18 @@
+---
+- name: install gems package
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - rubygems
+
+- name: install scout_realtime
+  gem: name=scout_realtime state=latest user_install=no
+  notify: start scout
+
+- name: Copy init.d
+  template: src=scout_realtime.j2 dest=/etc/init.d/scout_realtime mode=0755
+  notify: restart scout
+
+- name: Start scout_realtime on boot
+  action: command {{ item }} chdir=/etc/init.d/
+  with_items:
+    - update-rc.d scout_realtime defaults
