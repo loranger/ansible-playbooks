@@ -1,5 +1,15 @@
 ---
+- name: check composer version
+  shell: "composer --version | awk '{print $3}'"
+  register: current_composer_version
+  ignore_errors: True
+
 - name: install composer
   shell:
-    curl -sS https://getcomposer.org/installer | php && /bin/mv -f /home/vagrant/composer.phar /usr/bin/composer
+    curl -sS https://getcomposer.org/installer | php && /bin/mv -f ./composer.phar /usr/bin/composer
     creates=/usr/bin/composer
+  when: current_composer_version|failed
+
+- name: upgrade composer
+  shell: composer self-update
+  when: current_composer_version|success
