@@ -12,7 +12,7 @@
   apt_repository: repo='deb-src http://packages.dotdeb.org {{ debian }}-php55 all' state=present
 
 - name: install php packages
-  apt: pkg={{ item }} state=latest force=yes
+  apt: pkg={{ item }} state=latest force=yes update_cache=yes
   with_items:
     - php5-curl
     - php5-dbg
