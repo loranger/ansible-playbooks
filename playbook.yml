@@ -1,24 +1,27 @@
 ---
 - name: Common ansible playbook
-  hosts: myserver
-  
-  vars:
-      debian: wheezy
-      ntp_server: fr.pool.ntp.org
-      nginx_port: 80
-      nginx_workers: 4
-      php_engine: fpm # (hhvm or fpm)
+  hosts: all
 
   roles:
     - common
     - ntp
     - git
     - rmate
+    - { role: php-apache, when: php_engine == 'apache' }
     - { role: php-fpm, when: php_engine == 'fpm' }
     - { role: php-hhvm, when: php_engine == 'hhvm' }
     - php-extensions
+    - php-maxmind-geoip
+    - php-newrelic
+    - php-phalcon
+    - php-zmq
     - composer
     - nginx
     - mysql
+    - cassandra
     - python
+    - sharedance
     - redis
+    - elasticsearch
+    - scout_realtime
+    - zeromq
