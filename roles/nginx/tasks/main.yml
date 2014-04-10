@@ -1,6 +1,6 @@
 ---
 - name: install nginx packages
-  apt: pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=latest update_cache=yes
   with_items:
     - nginx
 
