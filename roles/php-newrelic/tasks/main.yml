@@ -1,0 +1,18 @@
+---
+- name: register newrelic key
+  apt_key: url=http://download.newrelic.com/548C16BF.gpg state=present
+  
+- name: add newrelic default repositories
+  apt_repository: repo='deb http://apt.newrelic.com/debian/ newrelic non-free' state=present
+
+- name: install newrelic php packages
+  apt: pkg={{ item }} state=latest force=yes update_cache=yes
+  with_items:
+    - newrelic-php5
+
+- name: copy newrelic.ini
+  template: src=newrelic.ini.j2 dest=/etc/php5/mods-available/newrelic.ini
+
+- name: activate newrelic
+  shell: php5enmod newrelic
+  notify: restart newrelic-daemon
