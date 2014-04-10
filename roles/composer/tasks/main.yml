@@ -1,6 +1,6 @@
 ---
 - name: check composer version
-  shell: "composer --version | awk '{print $3}'"
+  command: "composer --version  | (test ${PIPESTATUS[0]} -ne 0 || awk '{print $3}')"
   register: current_composer_version
   ignore_errors: True
 
