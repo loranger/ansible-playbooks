@@ -42,6 +42,7 @@ This playbook install the following [1] :
 #### Misc
   - [Bind](roles/bind) server
   - [Elasticsearch](roles/elasticsearch) server
+  - [Postfix](roles/postfix) server
   - [Sharedance](roles/sharedance) server
   - [0MQ](roles/zeromq) server
 

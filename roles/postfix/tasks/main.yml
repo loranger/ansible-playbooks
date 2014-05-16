@@ -1,0 +1,6 @@
+---
+- name: install postfix
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - postfix
+    - opendkim
