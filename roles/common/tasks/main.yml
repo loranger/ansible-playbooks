@@ -15,3 +15,6 @@
     - wget
     - ack-grep
     - python-pycurl
+
+- name: use french locales
+  locale_gen: name=fr_FR.UTF-8 state=present
