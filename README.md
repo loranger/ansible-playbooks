@@ -34,6 +34,7 @@ This playbook install the following [1] :
 
 #### Database
   - [MySQL](roles/mysql) server
+  - [MariaDB](roles/mariadb) server
   - [Cassandra](roles/cassandra) server
 
 #### Cache
