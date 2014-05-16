@@ -8,11 +8,13 @@ Roles
 
 This playbook install the following [1] :
 
-  - [Apache](roles/apache) server
   - [Basic packages and upgrade](roles/common) system
   - [Network Time Protocl](roles/ntp)
   - [Git distributed version control](roles/git) system
   - [rmate](roles/rmate) tool
+  
+  - [Bind](roles/bind) server
+  
   - [PHP Fast Process Manager](roles/php-fpm) or [PHP Apache module](roles/php-apache) or [HipHop Virtual Machine](roles/php-hhvm)
   - [PHP useful extensions](roles/php-extensions)
   - [PHP Maxmind](roles/php-maxmind-geoip) extension
@@ -20,9 +22,12 @@ This playbook install the following [1] :
   - [PHP Phalcon](roles/php-phalcon) extension
   - [PHP 0MQ](roles/php-zmq) extension
   - [Composer](roles/composer) tool
-  - [Nginx](roles/nginx) server
+  
+  - [Apache](roles/apache) server or [Nginx](roles/nginx) server
+  
   - [MySQL](roles/mysql) server
   - [Cassandra](roles/cassandra) server
+  
   - [Python](roles/python) programming language
   - [Sharedance](roles/sharedance) server
   - [Redis](roles/redis) server
@@ -33,4 +38,4 @@ This playbook install the following [1] :
 
 
 
-[1] In fact, it MAY : You have to comment come playbook lines in order to bypass the unrequested roles.
+[1] In fact, it MAY : You have to comment some playbook lines in order to bypass the unrequested roles.
