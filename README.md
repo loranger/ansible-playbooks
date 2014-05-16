@@ -8,16 +8,18 @@ Roles
 
 This playbook install the following [1] :
 
+#### System
   - [Basic packages and upgrade](roles/common) system
   - [Network Time Protocl](roles/ntp)
   - [Git distributed version control](roles/git) system
+  - [Python](roles/python) programming language
   - [rmate](roles/rmate) tool
 
+#### Monitoring
   - [Collectd](roles/collectd) tool
   - [Scout Realtime](roles/scout_realtime) tool
-  
-  - [Bind](roles/bind) server
-  
+
+#### PHP
   - [PHP Fast Process Manager](roles/php-fpm) or [PHP Apache module](roles/php-apache) or [HipHop Virtual Machine](roles/php-hhvm)
   - [PHP useful extensions](roles/php-extensions)
   - [PHP Maxmind](roles/php-maxmind-geoip) extension
@@ -25,16 +27,22 @@ This playbook install the following [1] :
   - [PHP Phalcon](roles/php-phalcon) extension
   - [PHP 0MQ](roles/php-zmq) extension
   - [Composer](roles/composer) tool
-  
+
+#### Web server
   - [Apache](roles/apache) server or [Nginx](roles/nginx) server
-  
+
+#### Database
   - [MySQL](roles/mysql) server
   - [Cassandra](roles/cassandra) server
-  
-  - [Python](roles/python) programming language
-  - [Sharedance](roles/sharedance) server
+
+#### Cache
+  - [Memcached](roles/memcached) server
   - [Redis](roles/redis) server
+
+#### Misc
+  - [Bind](roles/bind) server
   - [Elasticsearch](roles/elasticsearch) server
+  - [Sharedance](roles/sharedance) server
   - [0MQ](roles/zeromq) server
 
 
