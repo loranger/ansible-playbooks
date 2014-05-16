@@ -5,4 +5,5 @@
     - mysql-server
     - mysql-client
     - libmysqlclient-dev
+    - mytop
   notify: restart mysql
