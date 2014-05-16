@@ -1,0 +1,3 @@
+---
+- name: restart ferm
+  action: service name=ferm state=restarted enabled=yes

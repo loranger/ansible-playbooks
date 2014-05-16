@@ -14,6 +14,7 @@ This playbook install the following [1] :
   - [Git distributed version control](roles/git) system
   - [Python](roles/python) programming language
   - [rmate](roles/rmate) tool
+  - [Ferm](roles/ferm) tool
 
 #### Monitoring
   - [Collectd](roles/collectd) tool
