@@ -8,6 +8,7 @@ Roles
 
 This playbook install the following [1] :
 
+  - [Apache](roles/apache) server
   - [Basic packages and upgrade](roles/common) system
   - [Network Time Protocl](roles/ntp)
   - [Git distributed version control](roles/git) system

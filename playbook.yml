@@ -3,6 +3,7 @@
   hosts: all
 
   roles:
+    - { role: apache, when: php_engine == 'apache' }
     - common
     - ntp
     - git
@@ -16,7 +17,7 @@
     - php-phalcon
     - php-zmq
     - composer
-    - nginx
+    - { role: nginx, when: php_engine != 'apache' }
     - mysql
     - cassandra
     - python
