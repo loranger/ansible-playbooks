@@ -12,6 +12,9 @@ This playbook install the following [1] :
   - [Network Time Protocl](roles/ntp)
   - [Git distributed version control](roles/git) system
   - [rmate](roles/rmate) tool
+
+  - [Collectd](roles/collectd) tool
+  - [Scout Realtime](roles/scout_realtime) tool
   
   - [Bind](roles/bind) server
   
@@ -32,7 +35,6 @@ This playbook install the following [1] :
   - [Sharedance](roles/sharedance) server
   - [Redis](roles/redis) server
   - [Elasticsearch](roles/elasticsearch) server
-  - [Scout Realtime](roles/scout_realtime) tool
   - [0MQ](roles/zeromq) server
 
 
