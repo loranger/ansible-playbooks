@@ -15,6 +15,7 @@ This playbook install the following [1] :
   - [Python](roles/python) programming language
   - [rmate](roles/rmate) tool
   - [Ferm](roles/ferm) tool
+  - [ZSH](roles/zsh) shell
 
 #### Monitoring
   - [Collectd](roles/collectd) tool
