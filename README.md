@@ -37,6 +37,7 @@ This playbook install the following [1] :
   - [MySQL](roles/mysql) server
   - [MariaDB](roles/mariadb) server
   - [Cassandra](roles/cassandra) server
+  - [MongoDB](roles/mongodb)
 
 #### Cache
   - [Memcached](roles/memcached) server
@@ -44,6 +45,7 @@ This playbook install the following [1] :
 
 #### Misc
   - [Bind](roles/bind) server
+  - [Java](roles/java)
   - [Elasticsearch](roles/elasticsearch) server
   - [Postfix](roles/postfix) server
   - [Sharedance](roles/sharedance) server

@@ -20,8 +20,10 @@
     - { role: nginx, when: php_engine != 'apache' }
     - mysql
     - cassandra
+    - mongodb
     - python
     - sharedance
+    - java
     - redis
     - elasticsearch
     - scout_realtime
