@@ -1,0 +1,74 @@
+---
+- name: check predictionio
+  stat: path=/usr/local/sbin/PredictionIO-{{ predictionio.version }}
+  register: p
+
+- debug: msg="Path exists and is a directory"
+  when: p.stat.isdir is defined and p.stat.isdir == true
+
+# - name: check sharedance version
+#   shell: /usr/local/sbin/sharedanced | sed -n '2p'
+#   register: current_sharedance_version
+#   ignore_errors: True
+
+# - name: Install dependencies
+#   apt: pkg={{ item }} state=present
+#   with_items:
+#     - libevent-dev
+#     - gcc
+#     - make
+
+# - name: download archive
+#   action: command {{ item }} chdir=/root/
+#   with_items:
+#     - wget 
+#     - tar xzfv sharedance-{{ predictionio_version }}.tar.gz
+#     - rm sharedance-{{ predictionio_version }}.tar.gz
+#   when: "'{{ predictionio_version }}' not in '{{ current_sharedance_version.stdout }}'"
+
+# - name: Install sharedance
+#   action: command {{ item }} chdir=/root/sharedance-{{ predictionio_version }}
+#   with_items:
+#     - ./configure
+#     - make install-strip
+#     - mkdir /var/tmp/sharedance
+#     - rm -rf ../sharedance-{{ predictionio_version }}
+#   when: "'{{ predictionio_version }}' not in '{{ current_sharedance_version.stdout }}'"
+
+# - name: Copy init.d
+#   template: src=sharedanced.j2 dest=/etc/init.d/sharedanced mode=0755
+#   notify: restart sharedanced
+
+# - name: Start sharedance on boot
+#   action: command {{ item }} chdir=/etc/init.d/
+#   with_items:
+#     - update-rc.d sharedanced defaults
+#   when: "'{{ predictionio_version }}' not in '{{ current_sharedance_version.stdout }}'"
+
+- name: install required packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - unzip
+    - openjdk-7-jdk
+    - mongodb-org
+
+- name: download archive
+  get_url: url=http://download.prediction.io/PredictionIO-{{ predictionio.version }}.zip dest=/tmp/PredictionIO-{{ predictionio.version }}.zip
+  when: p.stat.isdir is not defined
+
+- name: extract archive
+  # unarchive: src="/tmp/PredictionIO-{{ predictionio.version }}.zip" dest=/usr/local/sbin
+  command: "{{ item }}"
+  with_items:
+      - unzip /tmp/PredictionIO-{{ predictionio.version }}.zip -d /usr/local/sbin
+      - rm -f /tmp/PredictionIO-{{ predictionio.version }}.zip
+  when: p.stat.isdir is not defined
+
+- name: copy init.d
+  template: src=predictionio.j2 dest=/etc/init.d/predictionio mode=0755
+  notify: restart predictionio
+
+- name: start predictionio on boot
+  action: command {{ item }} chdir=/etc/init.d/
+  with_items:
+    - update-rc.d predictionio defaults

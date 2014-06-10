@@ -48,6 +48,7 @@ This playbook install the following [1] :
   - [Java](roles/java)
   - [Elasticsearch](roles/elasticsearch) server
   - [Postfix](roles/postfix) server
+  - [PredictionIO](roles/predictionio) server
   - [Sharedance](roles/sharedance) server
   - [0MQ](roles/zeromq) server
 
