@@ -18,7 +18,8 @@
     - php-zmq
     - composer
     - { role: nginx, when: php_engine != 'apache' }
-    - mysql
+    - { role: mariadb, when: db_engine == 'mariadb' }
+    - { role: mysql, when: db_engine == 'mysql' }
     - cassandra
     - mongodb
     - python
@@ -27,4 +28,5 @@
     - redis
     - elasticsearch
     - scout_realtime
+    - beanstalkd
     - zeromq
