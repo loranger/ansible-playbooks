@@ -1,0 +1,9 @@
+---
+- name: start beanstalkd
+  action: service name=beanstalkd state=started enabled=yes
+  
+- name: restart beanstalkd
+  action: service name=beanstalkd state=restarted enabled=yes
+  
+- name: reload beanstalkd
+  action: service name=beanstalkd state=reloaded

@@ -1,0 +1,9 @@
+---
+- name: install beanstalkd packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - beanstalkd
+
+- name: setup service
+  template: src=beanstalkd.j2 dest=/etc/default/beanstalkd mode=0755
+  notify: restart beanstalkd

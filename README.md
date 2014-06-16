@@ -38,6 +38,10 @@ This playbook install the following [1] :
   - [MariaDB](roles/mariadb) server
   - [Cassandra](roles/cassandra) server
   - [MongoDB](roles/mongodb)
+  
+#### Queue messaging
+  - [0MQ](roles/zeromq) server
+  - [Beanstalkd](roles/beanstalkd) server
 
 #### Cache
   - [Memcached](roles/memcached) server
@@ -50,8 +54,6 @@ This playbook install the following [1] :
   - [Postfix](roles/postfix) server
   - [PredictionIO](roles/predictionio) server
   - [Sharedance](roles/sharedance) server
-  - [0MQ](roles/zeromq) server
-
 
 
 
