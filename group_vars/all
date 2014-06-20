@@ -3,4 +3,5 @@ ntp_server: fr.pool.ntp.org
 nginx_port: 80
 nginx_workers: 4
 php_engine: fpm # (hhvm or apache or fpm)
-db_engine: mariadb # (mysql, mariadb)
+db_engine: mariadb # (mysql or mariadb)
+queue_engine: beanstalkd # (beantsalkd or zmq)

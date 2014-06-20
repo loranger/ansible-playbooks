@@ -28,5 +28,5 @@
     - redis
     - elasticsearch
     - scout_realtime
-    - beanstalkd
-    - zeromq
+    - { role: beanstalkd, when: queue_engine == 'beanstalkd' }
+    - { role: zeromq, when: queue_engine == 'zeromq' }
