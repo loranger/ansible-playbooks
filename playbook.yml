@@ -30,3 +30,4 @@
     - scout_realtime
     - { role: beanstalkd, when: queue_engine == 'beanstalkd' }
     - { role: zeromq, when: queue_engine == 'zeromq' }
+    - haproxy

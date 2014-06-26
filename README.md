@@ -48,6 +48,7 @@ This playbook install the following [1] :
   - [Redis](roles/redis) server
 
 #### Misc
+  - [HAProxy](roles/haproxy) load balancer
   - [Bind](roles/bind) server
   - [Java](roles/java)
   - [Elasticsearch](roles/elasticsearch) server
