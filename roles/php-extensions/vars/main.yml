@@ -1,0 +1,14 @@
+php_extensions:
+    - php5-curl
+    - php5-dbg
+    - php5-intl
+    - php5-mcrypt
+    - php5-mysqlnd
+    - php5-apcu
+    - php5-geoip
+    - php5-imagick
+    - php5-memcache
+    - php5-mongo
+    - php5-readline
+    - php5-redis
+    - php5-xdebug
