@@ -1,0 +1,22 @@
+---
+- name: check facedetect existence
+  stat: path=/usr/local/bin/facedetect
+  register: facedetect_binary
+  ignore_errors: True
+
+- name: Install dependencies
+  apt: pkg={{ item }} state=present
+  with_items:
+    - python
+    - python-opencv
+    - libopencv-dev
+
+- name: checkout facedetect repository
+  git: repo=https://github.com/wavexx/facedetect.git dest=/tmp/facedetect
+  when: not facedetect_binary.stat.exists
+
+- name: move facedetect binary
+  action: command {{ item }} chdir=/tmp/facedetect/
+  with_items:
+    - mv facedetect /usr/local/bin/facedetect
+  when: not facedetect_binary.stat.exists

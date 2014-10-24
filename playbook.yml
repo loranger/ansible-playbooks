@@ -31,3 +31,6 @@
     - { role: beanstalkd, when: queue_engine == 'beanstalkd' }
     - { role: zeromq, when: queue_engine == 'zeromq' }
     - haproxy
+    - imagemagick
+    - graphicsmagick
+    - facedetect

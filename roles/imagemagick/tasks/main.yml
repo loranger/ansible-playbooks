@@ -1,0 +1,5 @@
+---
+- name: install imagemagick
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - imagemagick

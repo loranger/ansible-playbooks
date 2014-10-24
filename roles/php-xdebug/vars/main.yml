@@ -1,0 +1,14 @@
+# XDebug
+xdebug: {
+    default_enable : 0,
+    profiler_enable_trigger : 1,
+    profiler_output_name : "cachegrind.out.%u",
+    remote_enable : 0,
+    remote_host : "80.11.76.108",
+    max_nesting_level : 10000,
+    profiler_output_dir : "/home/tmp/cachegrind/",
+    trace_output_dir : "/home/tmp/cachegrind/",
+    show_mem_delta : 1,
+    trace_format : 1,
+    var_display_max_data : 2048
+}

@@ -46,6 +46,11 @@ This playbook install the following [1] :
 #### Cache
   - [Memcached](roles/memcached) server
   - [Redis](roles/redis) server
+  
+#### Image
+  - [ImageMagick](roles/imagemagick) tool
+  - [GraphicsMagick](roles/graphicsmagick) tool
+  - [FaceDetect](roles/facedetect) tool
 
 #### Misc
   - [HAProxy](roles/haproxy) load balancer
