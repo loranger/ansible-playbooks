@@ -2,10 +2,14 @@
 - name: install gems package
   apt: pkg={{ item }} state=latest
   with_items:
+    - ruby
     - rubygems
 
 - name: install scout_realtime
-  gem: name=scout_realtime state=latest user_install=no
+  gem: name={{ item }} state=latest user_install=no
+  with_items:
+    - json
+    - scout_realtime
   notify: start scout
 
 - name: Copy init.d
