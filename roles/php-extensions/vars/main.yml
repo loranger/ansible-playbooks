@@ -11,4 +11,3 @@ php_extensions:
     - php5-mongo
     - php5-readline
     - php5-redis
-    - php5-xdebug
