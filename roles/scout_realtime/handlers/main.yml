@@ -1,9 +1,9 @@
 ---
 - name: start scout
-  service: name=sharedanced start=started
+  service: name=scout_realtime start=started
 
 - name: restart scout
-  service: name=sharedanced state=restarted
+  service: name=scout_realtime state=restarted
 
 - name: stop scout
-  service: name=sharedanced state=reloaded
+  service: name=scout_realtime state=reloaded
