@@ -1,0 +1,10 @@
+---
+
+- name: start packetbeat
+  action: service name=packetbeat state=started enabled=yes
+
+- name: stop packetbeat
+  action: service name=packetbeat state=stopped
+
+- name: restart packetbeat
+  action: service name=packetbeat state=restarted

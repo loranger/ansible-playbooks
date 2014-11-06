@@ -1,7 +1,7 @@
 Ansible playbooks
 =================
 
-Usual and casual tasks for development debian server setting using ansible.
+Usual and casual tasks for development debian server settings using ansible.
 
 Roles
 -----
@@ -16,10 +16,12 @@ This playbook install the following [1] :
   - [rmate](roles/rmate) tool
   - [Ferm](roles/ferm) tool
   - [ZSH](roles/zsh) shell
+  - [Supervisor](roles/supervisor) daemon
 
 #### Monitoring
   - [Collectd](roles/collectd) tool
   - [Scout Realtime](roles/scout_realtime) tool
+  - [Packetbeat](roles/packetbeat) tool
 
 #### PHP
   - [PHP Fast Process Manager](roles/php-fpm) or [PHP Apache module](roles/php-apache) or [HipHop Virtual Machine](roles/php-hhvm)
@@ -28,6 +30,7 @@ This playbook install the following [1] :
   - [PHP New Relic](roles/php-newrelic) extension
   - [PHP Phalcon](roles/php-phalcon) extension
   - [PHP 0MQ](roles/php-zmq) extension
+  - [PHP XDebug](roles/php-xdebug) extension
   - [Composer](roles/composer) tool
 
 #### Web server
@@ -57,6 +60,7 @@ This playbook install the following [1] :
   - [Bind](roles/bind) server
   - [Java](roles/java)
   - [Elasticsearch](roles/elasticsearch) server
+  - [Kibana](roles/kibana) tool
   - [Postfix](roles/postfix) server
   - [PredictionIO](roles/predictionio) server
   - [Sharedance](roles/sharedance) server

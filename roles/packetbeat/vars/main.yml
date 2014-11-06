@@ -1,0 +1,3 @@
+packetbeat: 
+    version: "0.3.3"
+    url: https://github.com/packetbeat/packetbeat/releases/download/v0.3.3/packetbeat_0.3.3-1_amd64.deb

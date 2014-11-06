@@ -1,0 +1,19 @@
+---
+- name: check packetbeat existence
+  stat: path=/etc/init.d/packetbeat
+  register: packetbeat_binary
+  ignore_errors: True
+
+- name: install required packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - libpcap0.8
+
+- name: download packetbeat archive
+  get_url: url={{ packetbeat.url }} dest=/tmp/packetbeat.deb
+  when: not packetbeat_binary.stat.exists
+
+- name: install packetbeat packages
+  apt: deb=/tmp/packetbeat.deb
+  when: not packetbeat_binary.stat.exists
+  notify: start packetbeat
