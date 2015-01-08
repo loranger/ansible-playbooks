@@ -10,4 +10,5 @@ Supported Tasks
 The following tasks are executed :
 
   - Install [Ajenti](http://ajenti.org/) admin panel
+  - Install [Ajenti V](http://ajenti.org/) plugin suite (if enabled in vars)
   
