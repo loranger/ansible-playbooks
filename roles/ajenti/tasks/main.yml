@@ -1,0 +1,13 @@
+---
+- name: install ajenti gpg key
+  apt_key: url=http://repo.ajenti.org/debian/key state=present
+
+- name: add ajenti deb repository
+  apt_repository: repo='deb http://ftp.igh.cnrs.fr/pub/ajenti/repo/{{ ajenti_series_version }}/debian {{ debian }} main' state=present
+  apt_repository: repo='deb http://repo.ajenti.org/debian main main debian' state=present
+
+- name: install ajenti packages
+  apt: pkg={{ item }} state=latest update_cache=yes force=yes
+  with_items:
+      - ajenti
+  notify: restart ajenti
