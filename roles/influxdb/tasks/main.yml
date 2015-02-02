@@ -1,0 +1,18 @@
+---
+- name: check influxdb existence
+  stat: path=/etc/init.d/influxdb
+  register: influxdb_binary
+  ignore_errors: True
+
+- name: download influxdb archive
+  get_url: url=http://s3.amazonaws.com/influxdb/influxdb_latest_amd64.deb dest=/tmp/influxdb.deb
+  when: not influxdb_binary.stat.exists
+
+- name: install influxdb packages
+  apt: deb=/tmp/influxdb.deb
+  when: not influxdb_binary.stat.exists
+  notify: start influxdb
+
+- name: copy influxdb conf
+  template: src=config.toml.j2 dest=/opt/influxdb/shared/config.toml
+  notify: restart influxdb

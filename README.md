@@ -42,6 +42,7 @@ This playbook install the following [1] :
   - [MariaDB](roles/mariadb) server
   - [Cassandra](roles/cassandra) server
   - [MongoDB](roles/mongodb)
+  - [InfluxDB](roles/influxdb) server
   
 #### Queue messaging
   - [0MQ](roles/zeromq) server

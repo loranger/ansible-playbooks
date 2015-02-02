@@ -22,6 +22,7 @@
     - { role: mysql, when: db_engine == 'mysql' }
     - cassandra
     - mongodb
+    - influxdb
     - python
     - sharedance
     - java
