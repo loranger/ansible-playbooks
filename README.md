@@ -16,6 +16,7 @@ This playbook install the following [1] :
   - [rmate](roles/rmate) tool
   - [Ferm](roles/ferm) tool
   - [ZSH](roles/zsh) shell
+  - [Prezto](roles/prezto) zsh enhancement
   - [Supervisor](roles/supervisor) daemon
 
 #### Monitoring
@@ -55,11 +56,14 @@ This playbook install the following [1] :
   - [GraphicsMagick](roles/graphicsmagick) tool
   - [FaceDetect](roles/facedetect) tool
 
+#### Search
+  - [Elasticsearch](roles/elasticsearch) server
+  - [Sphinx](roles/sphinxsearch) server
+
 #### Misc
   - [HAProxy](roles/haproxy) load balancer
   - [Bind](roles/bind) server
   - [Java](roles/java)
-  - [Elasticsearch](roles/elasticsearch) server
   - [Kibana](roles/kibana) tool
   - [Postfix](roles/postfix) server
   - [PredictionIO](roles/predictionio) server
