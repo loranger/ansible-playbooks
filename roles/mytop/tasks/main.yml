@@ -1,0 +1,8 @@
+---
+- name: checkout mytop repository
+  git: repo=https://github.com/gregorg/mytop.git dest=/tmp/mytop
+
+- name: move mytop binary
+  action: command {{ item }} chdir=/usr/bin/
+  with_items:
+    - mv mytop /usr/bin/mytop
