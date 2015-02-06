@@ -1,8 +1,16 @@
 ---
-- name: checkout mytop repository
-  git: repo=https://github.com/gregorg/mytop.git dest=/tmp/mytop
+- name: remove mytop from deb
+  apt: name=mytop state=absent 
 
-- name: move mytop binary
-  action: command {{ item }} chdir=/usr/bin/
-  with_items:
-    - mv mytop /usr/bin/mytop
+- name: check mytop
+  stat: path=/usr/bin/mytop
+  register: mytopPresent
+
+- name: clone gregorg's mytop
+  git: repo=https://github.com/gregorg/mytop.git dest=/tmp/mytop
+  when: not mytopPresent.stat.exists
+  register: gitMytop
+
+- name: install mytop
+  command: mv /tmp/mytop/mytop /usr/bin/mytop
+  when: gitMytop|changed
