@@ -13,6 +13,7 @@ This playbook install the following [1] :
   - [Network Time Protocl](roles/ntp)
   - [Git distributed version control](roles/git) system
   - [Python](roles/python) programming language
+  - [Go](roles/go) programming language
   - [rmate](roles/rmate) tool
   - [Ferm](roles/ferm) tool
   - [ZSH](roles/zsh) shell

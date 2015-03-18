@@ -1,0 +1,6 @@
+go:
+  version: "1.4.2"
+  os: "linux"
+  arch: "amd64"
+  root_path: "/usr/local"
+gopath: "{{ go.root_path }}/go/bin/go"

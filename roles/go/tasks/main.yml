@@ -1,0 +1,19 @@
+---
+- name: check go version
+  shell: "{{ gopath }} version"
+  register: current_go_version
+  ignore_errors: True
+
+- name: install go
+  action: command {{ item }}
+  with_items:
+    - rm -rf {{ go.root_path }}/go
+    - wget https://storage.googleapis.com/golang/go{{ go.version }}.{{ go.os }}-{{ go.arch }}.tar.gz
+    - tar -C {{ go.root_path }} -xzf go{{ go.version }}.{{ go.os }}-{{ go.arch }}.tar.gz
+    - rm go{{ go.version }}.{{ go.os }}-{{ go.arch }}.tar.gz
+  when: "'{{ go.version }}' not in '{{ current_go_version.stdout }}'"
+
+- name: append path
+  lineinfile: dest=/etc/profile line="{{ item }}"
+  with_items:
+    - export PATH=$PATH:{{ gopath }}
