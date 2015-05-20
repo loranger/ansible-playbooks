@@ -1,4 +1,8 @@
 ---
+
+- name: add haproxy deb repository
+  apt_repository: repo='deb http://httpredir.debian.org/debian {{ debian }}-backports main' state=present
+
 - name: install haproxy
   apt: pkg={{ item }} state=latest
   with_items:
