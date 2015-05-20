@@ -3,3 +3,5 @@
   apt: pkg={{ item }} state=latest
   with_items:
     - git-core
+
+- shell: ssh-keyscan github.com >> /etc/ssh/ssh_known_hosts

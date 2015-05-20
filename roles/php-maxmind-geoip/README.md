@@ -1,7 +1,7 @@
 GeoIPCity Database
 ==================
 
-Maxmind goip database for PHP
+Maxmind geoip database for PHP
 
 Supported Tasks
 -----------------
