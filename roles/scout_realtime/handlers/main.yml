@@ -1,6 +1,6 @@
 ---
 - name: start scout
-  service: name=scout_realtime start=started
+  service: name=scout_realtime state=started
 
 - name: restart scout
   service: name=scout_realtime state=restarted

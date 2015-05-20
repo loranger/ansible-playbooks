@@ -3,6 +3,7 @@
   apt: pkg={{ item }} state=latest
   with_items:
     - ruby
+    - ruby-dev
     - rubygems
 
 - name: install scout_realtime
