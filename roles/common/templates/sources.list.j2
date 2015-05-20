@@ -1,8 +1,8 @@
-deb http://ftp.fr.debian.org/debian/ {{ debian }} main
-deb-src http://ftp.fr.debian.org/debian/ {{ debian }} main
+deb http://{{ debian_mirror }}/debian/ {{ debian }} main
+deb-src http://{{ debian_mirror }}/debian/ {{ debian }} main
 
 deb http://security.debian.org/ {{ debian }}/updates main
 deb-src http://security.debian.org/ {{ debian }}/updates main
 
-deb http://ftp.fr.debian.org/debian/ {{ debian }}-updates main
-deb-src http://ftp.fr.debian.org/debian/ {{ debian }}-updates main
+deb http://{{ debian_mirror }}/debian/ {{ debian }}-updates main
+deb-src http://{{ debian_mirror }}/debian/ {{ debian }}-updates main

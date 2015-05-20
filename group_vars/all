@@ -5,3 +5,6 @@ nginx_workers: 4
 php_engine: fpm # (hhvm or apache or fpm)
 db_engine: mariadb # (mysql or mariadb)
 queue_engine: beanstalkd # (beantsalkd or zmq)
+locale_gen: fr_FR.UTF-8
+debian_mirror: ftp.fr.debian.org
+mariadb_mirror: ftp.igh.cnrs.fr/pub
