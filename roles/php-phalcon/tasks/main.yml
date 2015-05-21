@@ -1,6 +1,6 @@
 ---
 - name: check phalcon version
-  shell: php -i | grep Phalcon
+  shell: php -i | grep phalcon
   register: current_phalcon_extension
   ignore_errors: True
 
