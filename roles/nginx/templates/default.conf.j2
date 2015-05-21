@@ -26,7 +26,6 @@ server {
 
 	# Make site accessible from http://localhost/
 	server_name _;
-    sendfile off;
 
 	location / {
 		# First attempt to serve request as file, then
@@ -51,18 +50,9 @@ server {
     }
 
     # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-    
+
     location ~ \.php$ {
-        fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        # NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
-    
-        # With php5-cgi alone:
-        # fastcgi_pass 127.0.0.1:9000;
-        # With php5-fpm:
-        fastcgi_pass unix:/var/run/php5-fpm.sock;
-        fastcgi_index index.php;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        include fastcgi_params;
+        include fastcgi_{{ php_engine }}.conf;
     }
 
 	# deny access to .htaccess files, if Apache's document root

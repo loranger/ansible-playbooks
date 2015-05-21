@@ -1,0 +1,59 @@
+# example config for laravel or other php project
+server {
+
+    listen {{ item.listen if item.listen is defined else 80}};
+
+    server_name  {{item.server_name}};
+
+    root {{item.public_path}};
+
+    #charset utf-8;
+
+    access_log {{ nginx.access_log if nginx.access_log is defined else "/var/log/nginx/" }}{{item.title}}.access.log;
+    error_log {{ nginx.error_log if nginx.error_log is defined else "/var/log/nginx/" }}{{item.title}}.error.log;
+
+
+    location / {
+        index index.php index.html index.htm;
+        try_files $uri /index.php?$query_string;
+    }
+
+    location /fonts/* {
+        add_header Access-Control-Allow-Origin *;
+    }
+
+    location ~* \.(ttf|eot|woff)$ {
+        add_header Access-Control-Allow-Origin *;
+    }
+
+    location ~* \.(jpg|jpeg|gif|css|png|js|ico|html|ttf|eot|woff)$ {
+        access_log off;
+        log_not_found off;
+
+        # Cache control
+        expires max;
+        add_header Cache-Control private;
+    }
+
+    location ~ \..*/.*\.php$ {
+        # This is to keep people away from listing other PHP files
+        return 403;
+    }
+
+    location /favicon.ico {
+        log_not_found off;
+        access_log off;
+    }
+
+    # proxy the PHP scripts to FPM
+    location ~ \.php$ {
+       include fastcgi_{{ php_engine }}.conf;
+    }
+
+    # deny access to .htaccess files, if Apache's document root
+    # concurs with nginx's one
+    location ~ /\.ht {
+       deny  all;
+    }
+
+}

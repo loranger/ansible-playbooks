@@ -1,0 +1,33 @@
+---
+
+#nginx_default_conf: "../../../../nginx-hosts/templates/yourhost.conf.j2"
+nginx_default_conf: "project-example.conf.j2"
+
+nginx:
+    # user: "www-data" # the "user" directive makes sense only if the master process runs with super-user privileges
+    gzip: "on"
+    sendfile: "off" # buggy on VirtualBox machines (not full page loaded)!
+    #tcp_nopush: "on"
+    #tcp_nodelay: "on"
+    #worker_processes: 1
+    #keepalive_timeout: 65
+    #worker_connections: 1024
+    #types_hash_max_size: 1024
+    #access_log: /var/log/nginx/;
+    #error_log: /var/log/nginx/;
+
+    sites:
+
+#      - title: learning-laravel-5  # Go here for Laravel 5 example project: https://github.com/z358z358/learning-laravel-5
+##        listen: 8080
+#        server_name: learning-laravel-5.dev www.learning-laravel-5.dev
+#        path: /vagrant/learning-laravel-5    # use it with vagrant or create manually
+#        public_path: /vagrant/learning-laravel-5/public
+#        template: "{{ nginx_default_conf }}" # put here special site.conf.j2 template, if it needed
+
+#      - title: tests
+##        listen: 8080
+#        server_name: tests.dev www.tests.dev
+#        path: /vagrant/tests/www
+#        public_path: /vagrant/tests/www
+#        template: "{{ nginx_default_conf }}"
