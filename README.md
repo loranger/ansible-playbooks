@@ -37,6 +37,7 @@ This playbook install the following [1] :
 
 #### Web server
   - [Apache](roles/apache) server or [Nginx](roles/nginx) server
+    * Note: If you need to configure nginx sites, read [this short instruction](roles/nginx)
 
 #### Database
   - [MySQL](roles/mysql) server
