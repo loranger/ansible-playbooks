@@ -1,7 +1,7 @@
 ---
 - name: Common ansible playbook
   hosts: all
-
+  sudo: true
   roles:
     - { role: apache, when: php_engine == 'apache' }
     - common

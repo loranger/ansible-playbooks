@@ -1,5 +1,5 @@
 ---
-- name: use french debian mirror
+- name: use debian mirror
   template: src=sources.list.j2 dest=/etc/apt/sources.list
 
 - name: upgrade the distro
@@ -16,5 +16,5 @@
     - ack-grep
     - python-pycurl
 
-- name: use french locales
-  locale_gen: name=fr_FR.UTF-8 state=present
+- name: use locales
+  locale_gen: name={{ locale_gen }} state=present
