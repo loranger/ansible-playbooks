@@ -1,6 +1,0 @@
----
-- name: start ajenti
-  action: service name=mysql state=started enabled=yes
-
-- name: restart ajenti
-  action: service name=mysql state=restarted enabled=yes

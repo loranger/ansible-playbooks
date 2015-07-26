@@ -1,6 +1,0 @@
----
-- name: restart elasticsearch
-  action: service name=elasticsearch state=restarted enabled=yes
-  
-- name: reload elasticsearch
-  action: service name=elasticsearch state=reloaded

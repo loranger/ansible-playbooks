@@ -1,5 +1,0 @@
----
-- name: install git
-  apt: pkg={{ item }} state=latest
-  with_items:
-    - git-core

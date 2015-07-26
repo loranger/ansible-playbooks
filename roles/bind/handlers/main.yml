@@ -1,6 +1,0 @@
----
-- name: restart bind9
-  action: service name=bind9 state=restarted enabled=yes
-  
-- name: reload bind9
-  action: service name=bind9 state=reloaded

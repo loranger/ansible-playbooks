@@ -1,9 +1,0 @@
----
-- name: start predictionio
-  action: service name=predictionio state=started enabled=yes
-
-- name: stop predictionio
-  action: service name=predictionio state=stopped
-
-- name: restart predictionio
-  action: service name=predictionio state=restarted

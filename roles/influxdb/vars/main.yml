@@ -1,6 +1,0 @@
-influxdb:
-    port:
-        admin: 8083
-        api: 8086
-        raft: 8090
-        protobuf: 8099

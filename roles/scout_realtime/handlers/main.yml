@@ -1,9 +1,0 @@
----
-- name: start scout
-  service: name=scout_realtime start=started
-
-- name: restart scout
-  service: name=scout_realtime state=restarted
-
-- name: stop scout
-  service: name=scout_realtime state=reloaded

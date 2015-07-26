@@ -3,35 +3,35 @@
   hosts: all
 
   roles:
-    - { role: apache, when: php_engine == 'apache' }
-    - common
-    - ntp
-    - git
-    - rmate
-    - { role: php-apache, when: php_engine == 'apache' }
-    - { role: php-fpm, when: php_engine == 'fpm' }
-    - { role: php-hhvm, when: php_engine == 'hhvm' }
-    - php-extensions
-    - php-maxmind-geoip
-    - php-newrelic
-    - php-phalcon
-    - php-zmq
-    - composer
-    - { role: nginx, when: php_engine != 'apache' }
-    - { role: mariadb, when: db_engine == 'mariadb' }
-    - { role: mysql, when: db_engine == 'mysql' }
-    - cassandra
-    - mongodb
-    - influxdb
-    - python
-    - sharedance
-    - java
-    - redis
-    - elasticsearch
-    - scout_realtime
-    - { role: beanstalkd, when: queue_engine == 'beanstalkd' }
-    - { role: zeromq, when: queue_engine == 'zeromq' }
-    - haproxy
-    - imagemagick
-    - graphicsmagick
-    - facedetect
+    - { role: loranger.apache, when: web.server == 'apache' }
+    - { role: loranger.debian-common }
+    - { role: loranger.debian-ntp }
+    - { role: loranger.debian-git }
+    - { role: loranger.debian-rmate }
+    - { role: loranger.debian-php-apache, when: web.server == 'apache' }
+    - { role: loranger.debian-php-fpm, when: nginx.php_engine == 'fpm' }
+    - { role: loranger.debian-php-hhvm, when: nginx.php_engine == 'hhvm' }
+    - { role: loranger.debian-php-extensions }
+    - { role: loranger.debian-php-maxmind-geoip }
+    - { role: loranger.debian-php-newrelic }
+    - { role: loranger.debian-php-phalcon }
+    - { role: loranger.debian-php-zmq }
+    - { role: loranger.debian-composer }
+    - { role: loranger.debian-nginx, when: web.server != 'apache' }
+    - { role: loranger.debian-mariadb, when: web.db == 'mariadb' }
+    - { role: loranger.debian-mysql, when: web.db == 'mysql' }
+    - { role: loranger.debian-cassandra }
+    - { role: loranger.debian-mongodb }
+    - { role: loranger.debian-influxdb }
+    - { role: loranger.debian-python }
+    - { role: loranger.debian-sharedance }
+    - { role: loranger.debian-java }
+    - { role: loranger.debian-redis }
+    - { role: loranger.debian-elasticsearch }
+    - { role: loranger.debian-scout_realtime }
+    - { role: loranger.debian-beanstalkd, when: web.queue == 'beanstalkd' }
+    - { role: loranger.debian-zeromq, when: web.queue == 'zeromq' }
+    - { role: loranger.debian-haproxy }
+    - { role: loranger.debian-imagemagick }
+    - { role: loranger.debian-graphicsmagick }
+    - { role: loranger.debian-facedetect }

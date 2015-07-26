@@ -1,7 +1,7 @@
 Ansible playbooks
 =================
 
-Usual and casual tasks for development debian server settings using ansible.
+Usual and casual tasks for development debian server settings using ansible galaxy
 
 Roles
 -----
@@ -73,4 +73,4 @@ This playbook install the following [1] :
 
 
 
-[1] In fact, it MAY : You have to comment some playbook lines in order to bypass the unrequested roles.
+[1] In fact, it MAY : You have to comment some playbook lines in order to bypass the unrequested roles. You could also add your own role or any [ansible galaxy role](https://galaxy.ansible.com/intro)

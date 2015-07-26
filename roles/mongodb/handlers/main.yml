@@ -1,6 +1,0 @@
----
-- name: restart mongodb
-  action: service name=mongod state=restarted enabled=yes
-  
-- name: reload mongodb
-  action: service name=mongod state=reloaded

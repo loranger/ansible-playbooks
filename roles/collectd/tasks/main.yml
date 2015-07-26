@@ -1,5 +1,0 @@
----
-- name: install collectd
-  apt: pkg={{ item }} state=latest
-  with_items:
-    - collectd

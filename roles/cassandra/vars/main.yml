@@ -1,7 +1,0 @@
-cassandra_gpg_key_id: F758CE318D77295D
-cassandra_series_version: 11x
-
-cassandra_cluster_name: 'Test Cluster'
-cassandra_listen_address: 'localhost' # blank, or 0.0.0.0
-cassandra_rpc_address: 'localhost' # blank, or 0.0.0.0
-cassandra_rpc_port: 9160

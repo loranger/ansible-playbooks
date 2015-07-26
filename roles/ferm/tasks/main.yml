@@ -1,5 +1,0 @@
----
-- name: install ferm packages
-  apt: pkg={{ item }} state=latest update_cache=yes
-  with_items:
-    - ferm

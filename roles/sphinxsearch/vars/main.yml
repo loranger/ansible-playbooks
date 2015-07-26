@@ -1,8 +1,0 @@
-sphinxsearch:
-    start: "yes"
-    sql:
-        host: "localhost"
-        user: "test"
-        pass: ""
-        db: "test"
-        port: "3306"

@@ -1,3 +1,0 @@
----
-- name: restart newrelic-daemon
-  action: service name=newrelic-daemon state=restarted enabled=yes

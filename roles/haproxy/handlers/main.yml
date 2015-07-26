@@ -1,6 +1,0 @@
----
-- name: start haproxy
-  action: service name=haproxy state=started enabled=yes
-
-- name: restart haproxy
-  action: service name=haproxy state=restarted enabled=yes

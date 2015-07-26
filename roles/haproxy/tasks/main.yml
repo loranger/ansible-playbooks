@@ -1,6 +1,0 @@
----
-- name: install haproxy
-  apt: pkg={{ item }} state=latest
-  with_items:
-    - haproxy
-  notify: restart haproxy

@@ -1,7 +1,12 @@
-debian: wheezy
-ntp_server: fr.pool.ntp.org
-nginx_port: 80
-nginx_workers: 4
-php_engine: fpm # (hhvm or apache or fpm)
-db_engine: mariadb # (mysql or mariadb)
-queue_engine: beanstalkd # (beantsalkd or zmq)
+debian:
+    version: wheezy
+web:
+    server: nginx # (nginx or apache)
+    db: mariadb
+    queue: beanstalkd
+ntp:
+    server: fr.pool.ntp.org
+nginx:
+    port: 80
+    workers: 4
+    php_engine: fpm # (hhvm fpm)
