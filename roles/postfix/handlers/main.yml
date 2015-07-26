@@ -1,0 +1,12 @@
+---
+- name: restart postfix
+  action: service name=postfix state=restarted enabled=yes
+  
+- name: reload postfix
+  action: service name=postfix state=reloaded
+
+- name: restart opendkim
+  action: service name=opendkim state=restarted enabled=yes
+  
+- name: reload opendkim
+  action: service name=opendkim state=reloaded
