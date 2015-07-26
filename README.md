@@ -1,11 +1,16 @@
 # UNMAINTAINED
 
 __This branch won't be updated anymore : I did switch to Ansible Galaxy and use the [galaxy](/loranger/ansible-playbooks/tree/galaxy) branch instead. Maybe you should?__
+
 The main goal of this switch is to being able to provision any docker from a simple playbook whereas cloning first this repository was a mandatory before.
+
 Of course, galaxy is also able to provision a local machine, a remote server, a vagrant or any virtual machine; as usual.
 
+
 In order to use galaxy properly, I had to create a repository for each existing role.
+
 I didn't want to flood my github profile so I created an [organization](/cowops/) you can apply for.
+
 Just ping me ;)
 
 
