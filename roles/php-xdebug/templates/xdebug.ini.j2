@@ -1,6 +1,6 @@
 ; configuration for php xdebug module
 ; priority=20
-; zend_extension=xdebug.so
+zend_extension=xdebug.so
 
 [xdebug]
 xdebug.default_enable = "{{ xdebug.default_enable }}"
@@ -8,9 +8,12 @@ xdebug.profiler_enable_trigger = "{{ xdebug.profiler_enable_trigger }}"
 xdebug.profiler_output_name = "{{ xdebug.profiler_output_name }}"
 xdebug.remote_enable = "{{ xdebug.remote_enable }}"
 xdebug.remote_host = "{{ xdebug.remote_host }}"
+xdebug.remote_connect_back = "{{ xdebug.remote_connect_back }}"
+xdebug.remote_autostart = "{{ xdebug.remote_autostart }}"
 xdebug.max_nesting_level = "{{ xdebug.max_nesting_level }}"
 xdebug.profiler_output_dir = "{{ xdebug.profiler_output_dir }}"
 xdebug.trace_output_dir = "{{ xdebug.trace_output_dir }}"
 xdebug.show_mem_delta = "{{ xdebug.show_mem_delta }}"
 xdebug.trace_format = "{{ xdebug.trace_format }}"
 xdebug.var_display_max_data = "{{ xdebug.var_display_max_data }}"
+xdebug.cli_color = "{{ xdebug.cli_color }}"

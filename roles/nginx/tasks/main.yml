@@ -4,14 +4,30 @@
   with_items:
     - nginx
 
+# ansible will try to find your personal variables (out of this git project)
+- include_vars: "{{ item }}"
+  with_first_found:
+   - "../../../../nginx-hosts/vars/nginx_secrets.yml"
+   - "nginx_defaults.yml"
+
 - name: copy nginx default conf
   template: src=nginx.conf.j2 dest=/etc/nginx/nginx.conf
   notify: reload nginx
 
+- name: add nginx engine configuration
+  template: src=fastcgi_{{ php_engine }}.conf.j2 dest=/etc/nginx/fastcgi_{{ php_engine }}.conf
+
 - name: copy nginx default site
-  template: src=default.{{ php_engine }}.j2 dest=/etc/nginx/sites-available/default
+  template: src=default.conf.j2 dest=/etc/nginx/sites-available/default
   notify: reload nginx
-  
+
+# this is a bad for public hosts!
 - name: copy phpinfo
   template: src=index.php.j2 dest=/usr/share/nginx/html/index.php
   notify: reload nginx
+
+- name: add sites configuration
+  template: src={{item.template}} dest=/etc/nginx/conf.d/{{item.title}}.conf
+  with_items: nginx.sites
+  when: item.template is defined
+  notify: restart nginx
