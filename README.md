@@ -1,7 +1,7 @@
 Ansible playbooks
 =================
 
-Usual and casual tasks for development debian server settings using ansible galaxy
+Usual and casual tasks for development debian server settings using [ansible galaxy](https://galaxy.ansible.com/intro)
 
 Roles
 -----
