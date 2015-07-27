@@ -9,7 +9,7 @@ Of course, galaxy is also able to provision a local machine, a remote server, a 
 
 In order to use galaxy properly, I had to create a repository for each existing role.
 
-I didn't want to flood my github profile so I created an [organization](//github.com/cowops/) you can apply for.
+I didn't want to flood my github profile so I created an [organization](//github.com/cowops/) you can join.
 
 Just ping me ;)
 
